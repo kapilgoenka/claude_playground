@@ -1,0 +1,42 @@
+[project]
+name = "uv-cats"
+version = "0.1.0"
+description = "Display cat information for the specified breed."
+readme = "README.md"
+requires-python = ">=3.14"
+license = {text = "MIT"}
+authors = [
+    {name = "Kapil Goenka", email = "kapilgoenka@users.noreply.github.com"}
+]
+keywords = ["cat", "breeds", "cli", "api"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "requests>=2.32.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/kapilgoenka/uv_cats"
+Repository = "https://github.com/kapilgoenka/uv_cats"
+Issues = "https://github.com/kapilgoenka/uv_cats/issues"
+
+[project.scripts]
+uv-cats = "main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]

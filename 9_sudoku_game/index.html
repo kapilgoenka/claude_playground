@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya's Sudoku</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Arya's Sudoku</h1>
+        <div class="game-container">
+            <div id="board" class="board"></div>
+            <div class="controls">
+                <div class="number-pad">
+                    <button class="num-btn" data-num="1">1</button>
+                    <button class="num-btn" data-num="2">2</button>
+                    <button class="num-btn" data-num="3">3</button>
+                    <button class="num-btn" data-num="4">4</button>
+                    <button class="num-btn" data-num="5">5</button>
+                    <button class="num-btn" data-num="6">6</button>
+                    <button class="num-btn" data-num="7">7</button>
+                    <button class="num-btn" data-num="8">8</button>
+                    <button class="num-btn" data-num="9">9</button>
+                    <button class="num-btn erase-btn" data-num="0">Erase</button>
+                </div>
+                <button id="new-game" class="new-game-btn">New Game</button>
+            </div>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+    <script src="sudoku.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

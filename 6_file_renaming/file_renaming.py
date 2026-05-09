@@ -1,7 +1,7 @@
 # PROMPT:
 #
 # Let's work on a new file. Call it file_renaming.py. It should start out by
-# creating a folder called "file_renaming_test" and create 20 randomly named
+# creating a folder called "files" and create 20 randomly named
 # files it it. Keep roughly equal distribution of file suffixes .txt, .pdf,
 # .csv and .png. If the folder already exists, delete and recreate it. Then,
 # the script should add the prefix "project_" to all files. Print out a
@@ -56,9 +56,10 @@ def generate_random_filename(length=8):
 
 def create_test_folder():
     """
-    Creates the file_renaming_test folder, deleting it first if it exists.
+    Creates the files folder under the script's directory.
     """
-    folder_name = "file_renaming_test"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    folder_name = os.path.join(script_dir, "files")
 
     print(f"Checking if folder '{folder_name}' exists...")
     if os.path.exists(folder_name):

@@ -9,7 +9,7 @@
 # and any other langauge.
 #
 # This time, add a third function that does the same thing as the first
-# functionm, but uses the library "colorama" to use a different color for each
+# function, but uses the library "colorama" to use a different color for each
 # hello world message. You pick the colors.
 #
 # Fix this error: ModuleNotFoundError: No module named 'colorama'

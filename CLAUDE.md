@@ -3,51 +3,97 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with
 code in this repository.
 
+## Repository Structure
+
+This is a learning playground where each project lives in a numbered folder:
+
+```
+1_hello_world/         # Python hello world
+2_hello_fibonacci/     # Python Fibonacci
+3_hello_loop/          # Python loop demo
+4_reverse_string/      # Python string reversal (uses input())
+5_is_prime/            # JavaScript prime checker (Node)
+6_file_renaming/       # Python file renaming script (see below)
+7_tic_tac_toe_streamlit/  # Python Streamlit app
+8_tic_tac_toe_js/      # Vanilla JS/HTML/CSS game
+9_sudoku_game/         # Vanilla JS/HTML/CSS game
+10_employee_sql/       # Python MySQL query script
+11_workout_dashboard/  # React + Vite web app (see below)
+```
+
+New projects are prefixed with the next number and use underscores (not
+hyphens).
+
+## Running Code
+
+**Python scripts:**
+```bash
+python <path>/<filename>.py
+```
+
+**JavaScript (Node) scripts:**
+```bash
+node <path>/<filename>.js
+```
+
+**Streamlit app (`7_tic_tac_toe_streamlit`):**
+```bash
+streamlit run 7_tic_tac_toe_streamlit/tic_tac_toe.py
+```
+
+**Workout dashboard (`11_workout_dashboard`):**
+```bash
+cd 11_workout_dashboard
+npm run dev      # dev server at http://localhost:5173
+npm run build    # production build
+```
+
 ## Code Style
 
-- **Line length**: 88 characters maximum
-- Wrap lines where necessary to maintain this limit
+- **Line length**: 88 characters maximum — wrap lines where necessary
+- No comments unless the WHY is non-obvious
 
 ### File Header Comments
 
-All files must begin with a header comment containing the original prompt that
-generated the file. Format:
+Every standalone script must begin with a PROMPT header capturing all prompts
+used to build it (append new prompts as the file evolves):
 
-**Python files:**
+**Python:**
 ```python
 # PROMPT:
 #
 # [prompt text, wrapped at 88 characters]
 #
-
-[code starts here]
 ```
 
-**JavaScript files:**
+**JavaScript:**
 ```javascript
 // PROMPT:
 //
 // [prompt text, wrapped at 88 characters]
 //
-
-[code starts here]
 ```
 
-The header includes:
-- "PROMPT:" label on the first line
-- Empty comment line after the label
-- The prompt text with proper line wrapping
-- Empty comment line at the end
-- Blank line before code begins
+Format rules: `PROMPT:` label, blank comment line, wrapped prompt text, blank
+comment line, then one blank line before code.
 
-## Running Code
+## Project Notes
 
-**Python files:**
-```bash
-python <filename>.py
-```
+### `6_file_renaming/file_renaming.py`
+Creates a `files/` subfolder relative to the script's own directory (uses
+`__file__`), generates 20 random files (.txt, .pdf, .csv, .png), renames them
+with timestamps or resolution (for PNGs), then reverts. Run with `--execute`
+to do real renames; default is dry-run mode.
 
-**JavaScript files:**
-```bash
-node <filename>.js
-```
+### `11_workout_dashboard/`
+React 18 + Vite + Tailwind CSS + Chart.js dashboard for Hevy gym app exports.
+
+- **Data**: `public/hevy-export.csv` (Hevy export, format:
+  `"Nov 25, 2025, 5:47 AM"`)
+- **Entry**: `src/App.jsx` fetches the CSV with PapaParse, passes parsed rows
+  to `<Dashboard>`
+- **Data layer**: `src/utils/dataProcessor.js` — all parsing and aggregation
+  logic; `parseDate()` handles the abbreviated-month 12-hour format
+- **Components**: one file per chart/section in `src/components/`; each
+  imports only the Chart.js elements it needs and calls `ChartJS.register()`
+- **PRD**: `prd/workout-dashboard-prd.md`

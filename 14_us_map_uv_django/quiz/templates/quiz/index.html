@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US States Quiz</title>
+    <link rel="stylesheet" href="{% static 'quiz/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">US States Quiz</h1>
+            <div class="score-container">
+                <span class="score-label">Score:</span>
+                <span class="score" id="score">0</span>
+                <span class="score-separator">/</span>
+                <span class="total-questions">10</span>
+            </div>
+        </header>
+
+        <!-- Quiz Screen -->
+        <main class="quiz-screen" id="quiz-screen">
+            <div class="progress-container">
+                <span class="question-number">Question <span id="current-question">1</span> of 10</span>
+            </div>
+
+            <div class="map-container">
+                <svg id="us-map" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet">
+                    <!-- US Map will be inserted here by JavaScript -->
+                </svg>
+            </div>
+
+            <div class="question-container">
+                <h2 class="question">Which state is highlighted?</h2>
+            </div>
+
+            <div class="answers-container" id="answers-container">
+                <!-- Answer buttons will be inserted here by JavaScript -->
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+        </main>
+
+        <!-- Results Screen -->
+        <div class="results-screen hidden" id="results-screen">
+            <div class="results-content">
+                <h2 class="results-title">Quiz Complete!</h2>
+                <div class="final-score-container">
+                    <div class="final-score">
+                        <span id="final-score">0</span>
+                        <span class="final-total">/10</span>
+                    </div>
+                    <p class="results-message" id="results-message">Great job!</p>
+                </div>
+                <button class="btn btn-restart" id="restart-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'quiz/js/us-states.js' %}"></script>
+    <script src="{% static 'quiz/js/quiz.js' %}"></script>
+</body>
+</html>

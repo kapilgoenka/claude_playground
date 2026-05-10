@@ -8,17 +8,21 @@ code in this repository.
 This is a learning playground where each project lives in a numbered folder:
 
 ```
-1_hello_world/         # Python hello world
-2_hello_fibonacci/     # Python Fibonacci
-3_hello_loop/          # Python loop demo
-4_reverse_string/      # Python string reversal (uses input())
-5_is_prime/            # JavaScript prime checker (Node)
-6_file_renaming/       # Python file renaming script (see below)
+1_hello_world/            # Python hello world
+2_hello_fibonacci/        # Python Fibonacci
+3_hello_loop/             # Python loop demo
+4_reverse_string/         # Python string reversal (uses input())
+5_is_prime/               # JavaScript prime checker (Node)
+6_file_renaming/          # Python file renaming script (see below)
 7_tic_tac_toe_streamlit/  # Python Streamlit app
-8_tic_tac_toe_js/      # Vanilla JS/HTML/CSS game
-9_sudoku_game/         # Vanilla JS/HTML/CSS game
-10_employee_sql/       # Python MySQL query script
-11_workout_dashboard/  # React + Vite web app (see below)
+8_tic_tac_toe_js/         # Vanilla JS/HTML/CSS game
+9_sudoku_game/            # Vanilla JS/HTML/CSS game
+10_employee_sql/          # Python MySQL query script
+11_workout_dashboard/     # React + Vite web app (see below)
+12_django_uv/             # Django + uv project scaffold
+13_uv_cats_cli/           # Python CLI tool using TheCatAPI (see below)
+14_us_map_uv_django/      # Django + uv US states quiz app (see below)
+15_simple_form/           # React dark-themed contact form (single HTML file)
 ```
 
 New projects are prefixed with the next number and use underscores (not
@@ -84,6 +88,28 @@ Creates a `files/` subfolder relative to the script's own directory (uses
 `__file__`), generates 20 random files (.txt, .pdf, .csv, .png), renames them
 with timestamps or resolution (for PNGs), then reverts. Run with `--execute`
 to do real renames; default is dry-run mode.
+
+### `13_uv_cats_cli/`
+CLI tool that fetches cat breed info from TheCatAPI. Managed with `uv`.
+```bash
+cd 13_uv_cats_cli
+uv sync
+uv run uv-cats Siamese   # replace with any breed name
+uv run pytest            # run tests
+```
+
+### `14_us_map_uv_django/`
+Django + uv web app — a US states quiz with an interactive SVG map.
+```bash
+cd 14_us_map_uv_django
+uv sync
+uv run python manage.py migrate
+uv run python manage.py runserver   # http://127.0.0.1:8000
+```
+
+### `15_simple_form/`
+Self-contained React contact form (`form.html`) using React via CDN —
+no build step. Open directly in a browser.
 
 ### `11_workout_dashboard/`
 React 18 + Vite + Tailwind CSS + Chart.js dashboard for Hevy gym app exports.

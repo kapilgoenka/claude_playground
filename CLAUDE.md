@@ -23,6 +23,8 @@ This is a learning playground where each project lives in a numbered folder:
 13_uv_cats_cli/           # Python CLI tool using TheCatAPI (see below)
 14_us_map_uv_django/      # Django + uv US states quiz app (see below)
 15_simple_form/           # React dark-themed contact form (single HTML file)
+16_daily_challenge/       # Next.js 16 daily challenge generator (see below)
+17_kanban/                # Next.js 16 Kanban board with drag-and-drop (see below)
 ```
 
 New projects are prefixed with the next number and use underscores (not
@@ -110,6 +112,27 @@ uv run python manage.py runserver   # http://127.0.0.1:8000
 ### `15_simple_form/`
 Self-contained React contact form (`form.html`) using React via CDN —
 no build step. Open directly in a browser.
+
+### `16_daily_challenge/`
+Next.js 16 + React 19 daily challenge generator. Client-only, no persistence.
+```bash
+cd 16_daily_challenge/frontend
+npm install
+npm run dev       # http://localhost:3000
+npm run test      # vitest unit tests
+npm run test:e2e  # playwright e2e
+```
+
+### `17_kanban/`
+Next.js 16 + React 19 Kanban board. One board, five renameable columns, drag-
+and-drop cards via `@dnd-kit`, add/delete cards, no persistence.
+```bash
+cd 17_kanban/frontend
+npm install
+npm run dev       # http://localhost:3000
+npm run test      # vitest unit tests
+npm run test:e2e  # playwright e2e (port 3003)
+```
 
 ### `11_workout_dashboard/`
 React 18 + Vite + Tailwind CSS + Chart.js dashboard for Hevy gym app exports.

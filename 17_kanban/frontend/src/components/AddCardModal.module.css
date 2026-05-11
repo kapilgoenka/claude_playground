@@ -1,0 +1,109 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 33, 71, 0.6);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.modal {
+  width: min(100%, 440px);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 24px 80px rgba(3, 33, 71, 0.32);
+  display: grid;
+  gap: 24px;
+}
+
+.heading {
+  color: #032147;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.heading span {
+  color: #753991;
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  color: #888888;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea {
+  padding: 10px 14px;
+  border: 1px solid rgba(3, 33, 71, 0.2);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #032147;
+  text-transform: none;
+  letter-spacing: 0;
+  resize: vertical;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #209dd7;
+  box-shadow: 0 0 0 3px rgba(32, 157, 215, 0.18);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancelBtn,
+.addBtn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 120ms ease, opacity 120ms ease;
+}
+
+.cancelBtn {
+  background: transparent;
+  border: 1px solid rgba(3, 33, 71, 0.2);
+  color: #888888;
+}
+
+.cancelBtn:hover {
+  background: rgba(3, 33, 71, 0.06);
+}
+
+.addBtn {
+  background: #753991;
+  border: none;
+  color: #ffffff;
+}
+
+.addBtn:hover:not(:disabled) {
+  background: #5e2c76;
+}
+
+.addBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

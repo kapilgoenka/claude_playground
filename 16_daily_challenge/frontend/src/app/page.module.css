@@ -1,0 +1,174 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(236, 173, 10, 0.72), transparent 28%),
+    radial-gradient(circle at 82% 22%, rgba(32, 157, 215, 0.64), transparent 30%),
+    linear-gradient(135deg, #fff8df 0%, #dff6ff 44%, #f2e7fa 100%);
+  color: #032147;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.card {
+  width: min(100%, 720px);
+  display: grid;
+  gap: 28px;
+  padding: 40px;
+  border: 1px solid rgba(3, 33, 71, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 80px rgba(3, 33, 71, 0.18);
+}
+
+.header {
+  display: grid;
+  gap: 10px;
+}
+
+.kicker {
+  width: fit-content;
+  padding-bottom: 8px;
+  border-bottom: 4px solid #ecad0a;
+  color: #753991;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  max-width: 620px;
+  color: #032147;
+  font-size: clamp(2.1rem, 7vw, 4.1rem);
+  line-height: 1;
+  font-weight: 850;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  color: #888888;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(3, 33, 71, 0.2);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #032147;
+  font: inherit;
+  font-weight: 700;
+}
+
+.generateButton,
+.copyButton {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.generateButton {
+  padding: 0 24px;
+  background: #753991;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(117, 57, 145, 0.28);
+}
+
+.copyButton {
+  padding: 0 18px;
+  background: #209dd7;
+  color: #ffffff;
+}
+
+.generateButton:hover,
+.copyButton:hover {
+  transform: translateY(-1px);
+}
+
+.generateButton:focus-visible,
+.copyButton:focus-visible,
+.field select:focus-visible {
+  outline: 3px solid rgba(236, 173, 10, 0.58);
+  outline-offset: 3px;
+}
+
+.output {
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  border: 2px solid rgba(32, 157, 215, 0.22);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 252, 239, 0.96)),
+    linear-gradient(90deg, #ecad0a, #209dd7);
+  color: #032147;
+  font-size: clamp(1.55rem, 4vw, 2.35rem);
+  font-style: italic;
+  font-weight: 720;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer p {
+  color: #888888;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 18px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .controls,
+  .footer {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .generateButton,
+  .copyButton {
+    width: 100%;
+  }
+
+  .output {
+    min-height: 240px;
+    padding: 24px;
+  }
+}
